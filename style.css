@@ -20,12 +20,18 @@ body{
 input[type="button"]{
     font-size: 24px;
     font-weight: bold;
-
     color: white;
     background-color: blue;
     border: 0;
     margin-top: 5px;
+    outline: none;
 }
+input[type="button"]:hover{
+    cursor: pointer;
+    background-color: #000055;
+    transition: 0.3s;
+}
+
 .left-buttons, .right-buttons{
     display: inline-block;
 }
@@ -42,4 +48,13 @@ input[type="button"]{
 .article{
     display: inline;
 }
+.article > h3{
+    text-align: center;
+}
+.article > p{
+    text-align: justify;
+}
 
+.main-content{
+    margin: 0 15%;
+}
