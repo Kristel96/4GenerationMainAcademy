@@ -1,4 +1,45 @@
-table,th,td{
-    border: 1px solid black;
-    border-collapse: collapse;
+body{
+    margin:0
 }
+.container {
+    height: 250vh;
+    background-color: lightskyblue;
+    position: relative;
+}
+.main-slider{
+    height: 300px;
+    width: 100%;
+}
+.header{
+    height: 40px;
+    background-color: blue;
+    position: sticky;
+    top: 0;
+
+}
+input[type="button"]{
+    font-size: 24px;
+    font-weight: bold;
+
+    color: white;
+    background-color: blue;
+    border: 0;
+    margin-top: 5px;
+}
+.left-buttons, .right-buttons{
+    display: inline-block;
+}
+
+.right-buttons{
+    float: right;
+}
+/*Article Content Styles*/
+.article-img{
+    width: 40%;
+    float: left;
+    margin: 0 10px;
+}
+.article{
+    display: inline;
+}
+
