@@ -1,0 +1,33 @@
+body{
+ background-image: url("assets/world-map.png");
+    height: 300vh;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: contain;
+    background-color: white;
+}
+h1{
+    font-family: sans-serif;
+    letter-spacing: 4px;
+    text-align: center;
+    font-weight: bold;
+}
+h2{
+    font-family: cursive;
+    letter-spacing: 2px;
+    text-align: center;
+    font-style: italic;
+    font-weight: normal;
+}
+
+a:visited{
+    color: #656565;
+
+ }
+ a:active{
+color: blue;
+ }
+ p{
+     text-indent: 20px;
+     color: darkslategrey ;
+ }
