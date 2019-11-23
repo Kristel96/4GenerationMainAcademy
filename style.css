@@ -1,0 +1,15 @@
+header{
+    height: 35px;
+}
+header > div{
+    float: right;
+}
+
+
+div>section{
+    padding: 7px;
+    border: 1px solid blue
+}
+footer{
+    height: 45px;
+}
