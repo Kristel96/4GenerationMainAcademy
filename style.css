@@ -2,14 +2,36 @@ header{
     height: 35px;
 }
 header > div{
-    float: right;
+    text-align: right;
 }
-
 
 div>section{
     padding: 7px;
     border: 1px solid blue
 }
+p>button{
+    background-color: #7e79ff;
+    color: white;
+    padding: 5px 10px;
+    border: 1px solid #cd1670;
+}
+section>button{
+    color: #000bff;
+    padding: 5px 10px;
+    border: 1px solid #0d00cd;
+}
 footer{
     height: 45px;
+    margin: 7px 0;
+}
+
+div>button{
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: 1px solid yellowgreen;
+}
+button:hover{
+    cursor: pointer;
 }
