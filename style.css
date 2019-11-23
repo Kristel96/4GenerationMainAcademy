@@ -1,0 +1,28 @@
+header{
+    background-color: #10ffd7;
+    padding: 15px;
+}
+div{
+    background-color: #ffbf8a;
+    padding: 15px;
+    margin-top: 40px;
+    display: inline-block;
+}
+button{
+    padding: 15px;
+    color: white;
+}
+header>button{
+    margin-right: 20px;
+    background-color: blueviolet;
+}
+div>button{
+    width: 45%;
+    margin-right: 5%;
+    box-sizing: border-box;
+    background-color: #ffbf8a;
+    border: 1px solid orangered;
+}
+div>button:last-child{
+    margin-right: 0;
+}
