@@ -1,11 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Lab 1.3.1 - Favorite cities</title>
+    <title>Sticky Position List</title>
+    <style>
+        .list-header {
+            position: relative;
+        }
+
+        @supports (position: sticky) {
+            .list-header {
+                position: sticky;
+                top: 0;
+            }
+        }
+    </style>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="container">
+    <div class="list">
+        <div class="list-group">
+            <div class="list-header">
+                A
+            </div>
+            <div class="list-content">
+                <div>Aндрій</div>
+                <div>Андріана</div>
+                <div>Антон</div>
+                <div>Аліна</div>
+                <div>Амелі</div>
+            </div>
+        </div>
+        <div class="list-group">
+            <div class="list-header">
+                Б
+            </div>
+            <div class="list-content">
+                <div>Богдан</div>
+                <div>Богдана</div>
+                <div>Борис</div>
+                <div>Борислава</div>
+                <div>Братислав</div>
+            </div>
+        </div>
+        <div class="list-group">
+            <div class="list-header">
+                 В
+            </div>
+            <div class="list-content">
+                <div>Віктор</div>
+                <div>Вікторія</div>
+                <div>Володимир</div>
+                <div>Василь</div>
+            </div>
+        </div>
+        <div class="list-group">
+            <div class="list-header">
+                Г
+            </div>
+            <div class="list-content">
+                <div>Ганна</div>
+                <div>Григорій</div>
+                <div>Галина</div>
+                <div>Гордон</div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
