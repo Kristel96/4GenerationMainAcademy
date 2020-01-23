@@ -25,3 +25,7 @@ function emptyAllFields(){
     document.getElementById("city").value = "";
     document.getElementById("postCode").value ="";
 }
+
+var str = "Fred and Bob and Tod";
+var arr = str.split('and');
+ console.log(arr);
