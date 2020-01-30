@@ -35,10 +35,20 @@ function emptyFields(){
 }
 function showArticles(){
  for(var i=0;i<allArticles.length;i++){
-     let objContainer = document.createElement("article");
      let obj = allArticles[i];
-     let text  = document.createTextNode(obj.title);
-     objContainer.appendChild(text);
+
+     let objTitle = document.createElement("h3");
+     let titleText  = document.createTextNode(obj.title);
+     objTitle.appendChild(titleText);
+
+     let objArticle = document.createElement("article");
+     let articleText = document.createTextNode(obj.article);
+     objArticle.appendChild(articleText);
+
+     let objContainer = document.createElement("div");
+     objContainer.appendChild(objTitle);
+     objContainer.appendChild(objArticle);
+
     document.getElementById("articleContainer").appendChild(objContainer);
  }
 }
