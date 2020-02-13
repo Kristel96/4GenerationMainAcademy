@@ -6,27 +6,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap">
-    <label for="fullName">Full name</label>
-    <input id="fullName" placeholder="Full name" type="text">
 
-    <label for="age">Age</label>
-    <input id="age" placeholder="Age" type="text">
+<label for="fullname">
+    Введіть Повне ім'я
+    <input placeholder="Full Name" id="fullname">
+</label>
+<label for="phone">
+    Введіть номер телефону
+    <input placeholder="Phone number" id="phone">
+</label>
+<label for="yes">Так<input onclick="checkedYes(this)" type="checkbox" id="yes"></label>
+<label for="no">Ні<input onclick="checkedNo(this)" type="checkbox" id="no"></label>
+<label id="carModel"></label>
+<button> Зберегти</button>
 
-    <label for="phoneNumber">Phone Number</label>
-    <input id="phoneNumber" placeholder="Phone Number" type="text">
 
-    <label for="email">Email</label>
-    <input id="email" placeholder="Email" type="text">
 
-    <label for="city">City</label>
-    <input id="city" placeholder="City" type="text">
-
-    <label for="postCode">Post Code</label>
-    <input id="postCode" placeholder="Post code" type="text">
-    <br>
-    <button type="submit" onclick="saveUser();">Save User</button>
-</div>
 
 <script src="main.js"></script>
 </body>

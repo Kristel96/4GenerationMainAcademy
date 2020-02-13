@@ -1,27 +1,36 @@
-let allUsers = [];
+let lable = document.getElementById("carModel");
 
-function saveUser() {
-  let user ={};
-  let fullName = document.getElementById("fullName").value;
-  user.name = fullName;
-  let age = document.getElementById("age").value;
-  user.age = age;
-  let phone = document.getElementById("phoneNumber").value;
-  user.phoneNumber = phone;
-  let email = document.getElementById("email").value;
-  user.email = email;
-  let city = document.getElementById("city").value;
-  user.city = city;
-  let postCode = document.getElementById("postCode").value;
-  user.post = postCode;
-  allUsers.push(user);
-  emptyAllFields();
+function checkedYes(elem){
+    // console.dir(elem);
+    if(elem.checked ===true){
+        let noBox = document.getElementById("no");
+        if(noBox.checked === true){
+            noBox.checked = false;
+        }
+
+       // let lable = document.getElementById("carModel");
+        console.dir(lable.hasChildNodes());
+
+        if(lable.hasChildNodes()===false){
+            let modelInput = document.createElement("input");
+            modelInput.placeholder = "Car Model";
+            let modelText = document.createTextNode("Введіть марку автомобіля ");
+            lable.appendChild(modelText);
+            lable.appendChild(modelInput);
+        }
+
+    } else {
+        lable.innerHTML = "";
+    }
 }
-function emptyAllFields(){
-    document.getElementById("fullName").value ="";
-    document.getElementById("age").value ="";
-    document.getElementById("phoneNumber").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("city").value = "";
-    document.getElementById("postCode").value ="";
+function checkedNo(elem) {
+    if (elem.checked === true) {
+        let yesBox = document.getElementById("yes");
+        if (yesBox.checked === true) {
+            yesBox.checked = false;
+            // let lable = document.getElementById("carModel");
+            lable.innerHTML = "";
+           // lable.removeChild(lable.firstChild);
+        }
+    }
 }
