@@ -1,6 +1,11 @@
     let mainWrap = document.getElementById("mainWraper");
     let userWrap = document.getElementById("userInfoWrap");
-    getAllUsers();
+    getAllUsers(1);
+
+
+
+
+
 
 function getData(url, callback){
     let xhttp = new XMLHttpRequest();
@@ -15,8 +20,23 @@ function getData(url, callback){
     xhttp.send();
 }
 
- function getAllUsers() {
-    let allUsersURL = "https://reqres.in/api/users?page=1";
+ function getAllUsers(pageId) {
+     mainWrap.innerHTML = "";
+     // let elementsArray = document.querySelectorAll(".page");
+     // for (let i = 0; i<pagination.length;i++){
+     //     pagination[i].addEventListener("click", function () {
+     //         console.log("htmlcol");
+     //     });
+     // }
+
+     // elementsArray.forEach(function(elem) {
+     //     elem.addEventListener("click", function() {
+     //         console.log("node obj");
+     //     });
+     // });
+
+
+    let allUsersURL = "https://reqres.in/api/users?page="+pageId;
      getData(allUsersURL, createUsersList);
  }
  function getUser(id){
@@ -58,6 +78,7 @@ function createUsersList(users){
 
     }
     function moreInfo(event) {
+        userWrap.style.display = "block";
         mainWrap.style.display = "none";
         getUser(event.id);
 
@@ -69,10 +90,27 @@ function createUsersList(users){
         emailField.innerHTML = user.email;
         let imgField = document.createElement("img");
         imgField.src = user.avatar;
-
+        let backButton = document.createElement("button");
+        backButton.innerHTML = "Go Back";
+        backButton.id = "goBack";
+        backButton.className = "btn";
+        userWrap.innerHTML = "";
         userWrap.appendChild(imgField);
         userWrap.appendChild(nameField);
         userWrap.appendChild(emailField);
+        userWrap.appendChild(backButton);
 
+        backButton.addEventListener("click",function () {
+            mainWrap.style.display = "block";
+            userWrap.style.display = "none";
+        })
+
+    }
+    let pagination = document.getElementsByClassName("page");
+    for (let i = 0; i<pagination.length;i++){
+        pagination[i].onclick = function (evt) {
+            let clicked = evt.target.innerText;
+            getAllUsers(clicked)
+        };
     }
 
