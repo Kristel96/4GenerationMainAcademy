@@ -110,6 +110,14 @@ function createUsersList(users){
     for (let i = 0; i<pagination.length;i++){
         pagination[i].onclick = function (evt) {
             let clicked = evt.target.innerText;
+            if(clicked ==="2"){
+               evt.target.className = "page active";
+               evt.target.previousElementSibling.className  = "page notActive";
+            } else if(clicked ==="1"){
+                evt.target.className = "page active";
+                evt.target.nextElementSibling.className  = "page notActive";
+            }
+
             getAllUsers(clicked)
         };
     }
