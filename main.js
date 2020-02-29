@@ -1,6 +1,15 @@
-hideSign();
+
+class Sunsign {
+    constructor(name, callback){
+        this.sunName = name;
+        this.callBack = callback;
+    }
+    getData(){
+       this.callBack(this.sunName);
+    }
+}
 function getHoroscope (target){
-    let url = "http://sandipbgt.com/theastrologer/api/horoscope/"+target.id+"/today/";
+    let url = "http://sandipbgt.com/theastrologer/api/horoscope/"+target+"/today/";
 
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -18,6 +27,8 @@ function getHoroscope (target){
     xhttp.send();
 
 }
+let taurus = new Sunsign("taurus",getHoroscope);
+let info = taurus.getData();
 
 function showSign() {
     let elem = document.getElementById("signDescription");
