@@ -8,18 +8,36 @@ class Sunsign {
        this.callBack(this.sunName);
     }
 }
+
+
+hideSign();
 function getHoroscope (target){
     let url = "http://sandipbgt.com/theastrologer/api/horoscope/"+target+"/today/";
 
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
+            let info = [];
+            let element = {};
             let myResponse = JSON.parse(this.responseText);
             console.dir(myResponse);
             let sunName = document.getElementById("sName");
             sunName.innerText = myResponse.sunsign;
+            element.sunSignName =  myResponse.sunsign;
             let Horoscope = document.getElementById("descript");
             Horoscope.innerText = myResponse.horoscope;
+            element.horoscope =  myResponse.horoscope;
+            info.push(element);
+            let infoData = JSON.stringify(info);
+            let storageData = localStorage.getItem("sunsign");
+            if(storageData){
+               let strdata = JSON.parse(storageData);
+               strdata.push(element);
+               let data = JSON.stringify(strdata);
+                localStorage.setItem("sunsign",data);
+            }else{
+                localStorage.setItem("sunsign",infoData);
+            }
             showSign();
         }
     };
@@ -27,8 +45,11 @@ function getHoroscope (target){
     xhttp.send();
 
 }
-let taurus = new Sunsign("taurus",getHoroscope);
-let info = taurus.getData();
+function clickedSign(sign){
+    let sunsign = new Sunsign(sign, getHoroscope);
+    sunsign.getData();
+}
+
 
 function showSign() {
     let elem = document.getElementById("signDescription");
