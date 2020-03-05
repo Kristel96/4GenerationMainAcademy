@@ -1,7 +1,3 @@
-.rowContainer{
-    display: flex;
-    justify-content: center;
-}
-.rowContainer >div:hover{
-    cursor: pointer;
+body{
+    display: grid;
 }
