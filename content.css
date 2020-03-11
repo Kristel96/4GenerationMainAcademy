@@ -1,0 +1,13 @@
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-family: Verdana;
+}
+p {
+    font-style: italic;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
