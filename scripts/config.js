@@ -1,0 +1,11 @@
+requirejs.config({
+    baseURL:'scripts',
+    paths:{
+        jquery:[
+            'https://code.jquery.com/jquery-3.3.1.slim.min',
+            'libs/jquery-3.3.1'],
+        mymethods:'myScripts/myMethods',
+        coolmet:'myScripts/coolMethods'
+    }
+});
+requirejs(["myScripts/app"]);
