@@ -9,4 +9,11 @@ ul {
 li {
   color: #1A237E;
 }
+button {
+  color: #d5388d;
+}
+body {
+  color: #1A237E;
+  background-color: coral;
+}
 /*# sourceMappingURL=style.css.map */
