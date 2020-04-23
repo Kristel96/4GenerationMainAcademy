@@ -1,6 +1,36 @@
 body {
   background-color: #fdf975;
 }
+.navigation {
+  height: 50px;
+}
+.navigation button {
+  font-size: 30px;
+  border: 0;
+  background-color: #fdf975;
+  font-family: monospace;
+  margin: 0 15px;
+}
+.navigation button:hover {
+  cursor: pointer;
+}
+.navigation #search {
+  background-color: #ac89ff;
+  color: white;
+}
+.navigation input {
+  width: 250px;
+  background-color: #fdf975;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 3px solid black;
+  font-size: 30px;
+  font-family: monospace;
+}
+.navigation input:focus {
+  outline: none;
+}
 .baner {
   width: 200px;
   padding-top: 40px;

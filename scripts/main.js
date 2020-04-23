@@ -5,6 +5,7 @@ $(document).ready(function () {
     let totalPages;
 
     getMovies(currentPage);
+
     function getMovies(page){
         $.ajax({
             url: "https://api.themoviedb.org/3/movie/top_rated?api_key="+apiKey+"&language=en-US&page="+page,
@@ -20,6 +21,22 @@ $(document).ready(function () {
             }
         });
     }
+    function searchMovie(keyword,page){
+        $.ajax({
+            url: "https://api.themoviedb.org/3/search/movie?api_key="+apiKey+"&query="+keyword+"&page="+page,
+            type: "GET",
+            success: function(response){
+                parseData(response.results);
+                console.dir(response);
+                totalPages = response.total_pages;
+            },
+            error:function (msg) {
+                console.dir(msg);
+                alert(msg);
+            }
+        });
+    }
+
     $("#leftarr").click(function () {
         currentPage--;
         if(currentPage!==0 && currentPage<=totalPages){
@@ -38,9 +55,13 @@ $(document).ready(function () {
             getMovies(currentPage);
             $("#leftarr").show();
         }
-
     });
-    
+    $("#search").click(function () {
+        currentPage = 1;
+       let keyword = $("#searchWord").val();
+        searchMovie(keyword, currentPage);
+    });
+
     function parseData(data) {
         $("#mainContainer").empty();
         data.forEach(function (item) {
@@ -53,6 +74,8 @@ $(document).ready(function () {
         );
         })
     }
+
+
 });
 
 
